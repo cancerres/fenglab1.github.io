@@ -32,3 +32,9 @@ a.mfn-link-1:after {
   margin-bottom: 60px;
   text-align: center;
 }
+
+.section-title {
+  font-size: 24px;   /* same size increase */
+  margin-bottom: 20px;
+  text-align: left;   /* stays left */
+}
