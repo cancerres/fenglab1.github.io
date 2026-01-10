@@ -21,3 +21,14 @@ a.mfn-link-1:after {
 	-moz-transform: translateX(-20px);
 	transform: translateX(-20px)
 }
+
+.project-text {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.project-title {
+  font-size: 26px;
+  margin-bottom: 60px;
+  text-align: center;
+}
