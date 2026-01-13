@@ -38,3 +38,37 @@ a.mfn-link-1:after {
   margin-bottom: 20px;
   text-align: left;   /* stays left */
 }
+
+/* Featured publications */
+.featured-pubs { margin: 10px 0 40px 0; }
+.featured-pubs h2 { text-align:center; margin: 10px 0 25px 0; }
+
+.featured-card { text-align:left; }
+.featured-card .cover {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+  margin-bottom: 18px;
+}
+
+.featured-card .pub-title {
+  font-size: 1.15em;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.featured-card .pub-authors {
+  color:#666;
+  line-height: 1.5;
+  margin: 0 0 10px 0;
+}
+
+.featured-card .pub-meta {
+  font-weight:600;
+  margin: 0 0 12px 0;
+}
+
+.featured-card .pub-links a { margin-right: 14px; font-weight:600; }
