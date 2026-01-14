@@ -48,19 +48,28 @@ a.mfn-link-1:after {
 
 /* Article title */
 .featured-card .pub-title {
-  font-size: 1.35em;      /* was 1.15em */
-  line-height: 1.35;
+  font-size: 1.50em;      /* was 1.15em */
+  line-height: 1.6;
+	font-weight: 600
+	color: #c89a2b;        /* dark gold */
+  line-height: 1.3;
+  margin: 0 0 12px 0;
 }
+
+.featured-card .pub-title:hover {
+  color: #a87f1f;   /* slightly darker gold on hover */
+}
+
 
 /* Authors */
 .featured-card .pub-authors {
-  font-size: 1.05em;
+  font-size: 1.2em;
   line-height: 1.6;
 }
 
 /* Journal + year */
 .featured-card .pub-meta {
-  font-size: 1.05em;
+  font-size: 1.2em;
   font-weight: 600;
 }
 
