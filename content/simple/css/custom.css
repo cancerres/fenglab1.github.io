@@ -115,6 +115,27 @@ a.mfn-link-1:after {
   text-decoration: none;
 }
 
+/* Make all featured cards equal height */
+.featured-pubs .items_group {
+  display: flex;
+  gap: 30px;
+}
+
+.featured-pubs .column.one-third {
+  display: flex;
+}
+
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Push the link area to bottom so cards align nicely */
+.featured-card .pub-links {
+  margin-top: auto;
+}
+
 
 /* Make site wider */
 .container,
