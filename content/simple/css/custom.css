@@ -39,52 +39,36 @@ a.mfn-link-1:after {
   text-align: left;   /* stays left */
 }
 
-/* Featured publications */
-.featured-pubs { margin: 10px 0 40px 0; }
+/* === Featured Publications: bigger typography === */
+
 .featured-pubs h2 {
-  font-size: 24px;
-  margin: 10px 0 20px 0;
-  text-align: left;
-}
-
-
-
-.featured-card { text-align:left; }
-.featured-card .cover {
-  display:block;
-  width:100%;
-  height:auto;
-  border-radius:10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-  margin-bottom: 18px;
-}
-.featured-card { margin-bottom: 20px; }
-
-.featured-card .pub-title {
-  font-size: 1.15em;
-  line-height: 1.25;
+  font-size: 28px;        /* Section title: "Featured Publications" */
   font-weight: 700;
-  margin: 0 0 10px 0;
 }
 
+/* Article title */
+.featured-card .pub-title {
+  font-size: 1.35em;      /* was 1.15em */
+  line-height: 1.35;
+}
+
+/* Authors */
 .featured-card .pub-authors {
-  color:#666;
-  line-height: 1.5;
-  margin: 0 0 10px 0;
+  font-size: 1.05em;
+  line-height: 1.6;
 }
 
+/* Journal + year */
 .featured-card .pub-meta {
-  font-weight:600;
-  margin: 0 0 12px 0;
+  font-size: 1.05em;
+  font-weight: 600;
 }
 
-.featured-card .pub-links a { margin-right: 14px; font-weight:600; }
-
-.featured-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 14px;
+/* Link icons (PDF icon etc) */
+.featured-card .pub-links a {
+  font-size: 1.1em;
 }
+
 
 /* Make site wider */
 .container,
