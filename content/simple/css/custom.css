@@ -162,3 +162,27 @@ a.mfn-link-1:after {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* --- Featured Publications: force the grid to work with the theme --- */
+.featured-pubs .featured-grid{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Kill theme column sizing inside our grid */
+.featured-pubs .featured-grid > .column{
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;     /* IMPORTANT: theme padding can crush the grid */
+  box-sizing: border-box;
+}
+
+/* Make sure the parent row isn't forcing a strange layout */
+.featured-pubs .items_group{
+  display: block !important;
+}
