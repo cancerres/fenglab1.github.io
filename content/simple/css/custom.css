@@ -79,20 +79,10 @@ a.mfn-link-1:after {
   border-radius: 14px;
 }
 
-/* Make Featured section area stay light */
-.featured-pubs {
-  background: #fafafa !important;
-}
 
 .featured-pubs .section_wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Ensure the container behind it isn't forcing dark */
-.featured-pubs .section_wrapper,
-.featured-pubs .items_group,
-.featured-pubs .column_attr {
-  background: transparent !important;
-}
 
