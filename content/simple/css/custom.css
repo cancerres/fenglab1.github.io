@@ -527,3 +527,71 @@ img {
   padding: 18px 14px !important;
 }
 
+/* =========================================================
+   MEMBERS PAGE FIX (dark theme): restore text + scale fonts
+   Put this at the VERY END of custom.css
+========================================================= */
+
+/* --- Ensure members section text is NEVER black --- */
+.column_our_team,
+.column_our_team * {
+  color: #e0e0e0 !important;
+}
+
+/* If theme applies opacity/filters, neutralize */
+.column_our_team .desc_wrapper,
+.column_our_team .desc_wrapper * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* --- Bigger, responsive typography (home-page-like scaling) --- */
+.column_our_team h4 {
+  font-size: calc(22px + (30 - 22) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+}
+
+.column_our_team .subtitle {
+  font-size: calc(16px + (20 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.45 !important;
+  color: #cfcfcf !important;
+}
+
+.column_our_team .desc {
+  font-size: calc(16px + (19 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.6 !important;
+  color: #e0e0e0 !important;
+}
+
+/* --- HR line in members --- */
+.column_our_team .hr_color {
+  border-color: rgba(255,255,255,0.18) !important;
+  margin: 14px 0 !important;
+}
+
+/* --- Make Alumni + Join Us text bigger too (these use .column_attr.big) --- */
+.column_attr.big,
+.column_attr.big p,
+.column_attr.big ul,
+.column_attr.big li {
+  font-size: calc(16px + (19 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.7 !important;
+  color: #e0e0e0 !important;
+}
+
+/* The Alumni/JoinUs blocks use <ul> with <br> (not real <li>) — keep it readable */
+.column_attr.big ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* --- Email icon should still be visible on dark --- */
+.column_our_team .icon_bar i {
+  color: #d4b15f !important;
+}
+.column_our_team .icon_bar:hover i {
+  color: #f2d37a !important;
+}
