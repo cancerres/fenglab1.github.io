@@ -546,3 +546,74 @@ img {
 .team.team_circle .icon_bar:hover i {
   color: #f2d37a !important;
 }
+
+/* =========================================================
+   MEMBERS PAGE: FORCE TEXT TO SHOW (put at VERY END)
+========================================================= */
+
+/* Only target members page team blocks */
+.column_our_team .team,
+.column_our_team .team * {
+  color: #e8e8e8 !important;
+}
+
+/* Theme sometimes fades/animates team text; force visibility */
+.column_our_team .desc_wrapper,
+.column_our_team .desc_wrapper * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* Ensure subtitle + desc inherit white (theme often forces gray/black) */
+.column_our_team .subtitle,
+.column_our_team .desc,
+.column_our_team .desc a {
+  color: #e8e8e8 !important;
+}
+
+/* Make the divider line visible on dark */
+.column_our_team hr.hr_color {
+  border-color: rgba(255,255,255,0.20) !important;
+}
+
+/* If the theme uses an overlay inside image_frame that covers content */
+.column_our_team .team:before,
+.column_our_team .team:after,
+.column_our_team .image_frame:before,
+.column_our_team .image_frame:after {
+  display: none !important;
+}
+
+/* Make sure text sits above anything weird */
+.column_our_team .desc_wrapper {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Bigger fonts like home page scale */
+.column_our_team h4 {
+  font-size: calc(22px + (30 - 22) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.15 !important;
+  margin-bottom: 10px !important;
+}
+
+.column_our_team .subtitle {
+  font-size: calc(16px + (20 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.45 !important;
+}
+
+.column_our_team .desc {
+  font-size: calc(16px + (19 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.65 !important;
+}
+
+/* Email icon visibility */
+.column_our_team .icon_bar i {
+  color: #d4b15f !important;
+}
+.column_our_team .icon_bar:hover i {
+  color: #f2d37a !important;
+}
