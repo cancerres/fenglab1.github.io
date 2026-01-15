@@ -289,3 +289,67 @@ a.mfn-link-1:after {
 .column_our_team img {
   border-radius: 50% !important;
 }
+
+/* ===============================
+   Members page typography upgrade
+   (match Home page scale)
+================================ */
+
+/* Name (e.g. Dr. Weiran Feng) */
+.column_our_team h4 {
+  font-size: 26px !important;   /* similar to section-title scale */
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+/* Role subtitle */
+.column_our_team .subtitle {
+  font-size: 18px !important;
+  line-height: 1.5 !important;
+  color: #555 !important;
+}
+
+/* Bio text (education, mentor, etc.) */
+.column_our_team .desc {
+  font-size: 18px !important;   /* matches .project-text */
+  line-height: 1.6 !important;
+  color: #444 !important;
+}
+
+/* Make spacing cleaner */
+.column_our_team .desc_wrapper {
+  margin-top: 30px !important;
+}
+
+/* Make hr consistent with rest of site */
+.column_our_team .hr_color {
+  margin: 14px 0 !important;
+}
+
+
+/* ===============================
+   Responsive scaling (like home page)
+================================ */
+
+@media (max-width: 1100px) {
+  .column_our_team h4 {
+    font-size: 24px !important;
+  }
+
+  .column_our_team .subtitle,
+  .column_our_team .desc {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .column_our_team h4 {
+    font-size: 22px !important;
+  }
+
+  .column_our_team .subtitle,
+  .column_our_team .desc {
+    font-size: 16px !important;
+  }
+}
+
