@@ -687,3 +687,64 @@ img {
     color: rgba(255,255,255,0.90) !important;
   }
 }
+
+/* =========================================================
+   HOME: make "Mechanisms and Vulnerabilities..." stand out
+   (subheader hero title under the banner)
+========================================================= */
+
+/* Make sure the subheader area is the positioning context */
+#Subheader .container .column.one {
+  position: relative !important;
+}
+
+/* Target the exact title line */
+#Subheader h4.title {
+  /* spacing */
+  margin-top: -14px !important;     /* pull closer to banner */
+  margin-bottom: 12px !important;
+
+  /* typography */
+  font-size: clamp(22px, 2.2vw, 34px) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.4px !important;
+  line-height: 1.15 !important;
+  text-align: center !important;
+
+  /* color + emphasis */
+  color: #ffffff !important;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.65) !important;
+
+  /* “badge” style */
+  display: inline-block !important;
+  padding: 12px 18px !important;
+  border-radius: 14px !important;
+  background: rgba(0,0,0,0.55) !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Center the badge even though it's inline-block */
+#Subheader h4.title {
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+/* Add a gold underline accent */
+#Subheader h4.title::after {
+  content: "";
+  display: block;
+  width: min(220px, 70%);
+  height: 3px;
+  margin: 10px auto 0 auto;
+  border-radius: 999px;
+  background: rgba(212,177,95,0.95); /* gold */
+  box-shadow: 0 0 18px rgba(212,177,95,0.22);
+}
+
+/* Optional: tighten banner bottom gap so title feels attached */
+#Subheader img {
+  margin-bottom: 16px !important;
+}
