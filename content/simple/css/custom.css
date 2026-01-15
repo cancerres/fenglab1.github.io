@@ -622,29 +622,68 @@ img {
    Header polish: structure + spacing
 ================================ */
 
-/* Give the top bar a consistent dark surface */
-#Top_bar {
-  background: #0b0b0b !important;
-  border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+/* Lab caption size/spacing for header */
+.zlab_caption {
+  font-size: clamp(26px, 3.2vw, 40px) !important;
+  margin: 0 !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.5px;
 }
 
-/* Put logo + menu on one line (desktop) */
-#Top_bar .top_bar_left {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 24px !important;
+/* If you have a second line under it (your publications page had one earlier),
+   keep it small and subtle */
+.logo p:not(.zlab_caption) {
+  margin: 6px 0 0 0 !important;
+  font-size: 14px !important;
+  color: rgba(255,255,255,0.70) !important;
 }
 
-/* Logo block: keep compact */
-#Top_bar .logo {
-  flex: 0 0 auto !important;
-  padding: 12px 0 !important;
+/* Menu spacing + hover */
+#menu > ul > li > a {
+  padding: 14px 12px !important;
+  border-radius: 10px !important;
+  transition: color 0.18s ease, background 0.18s ease, transform 0.15s ease;
 }
 
-/* Menu block */
-#Top_bar .menu_wrapper {
-  flex: 1 1 auto !important;
-  display: flex !important;
-  justify-content: flex-end !important;
+#menu > ul > li > a span {
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+
+/* Default */
+#menu > ul > li > a,
+#menu > ul > li > a span {
+  color: rgba(255,255,255,0.88) !important;
+}
+
+/* Hover gold + subtle pill background */
+#menu > ul > li > a:hover,
+#menu > ul > li.current_page_item > a {
+  color: #d4b15f !important;
+  background: rgba(212,177,95,0.10) !important;
+}
+
+#menu > ul > li > a:hover {
+  transform: translateY(-1px);
+}
+
+/* Reduce excess header height */
+#Top_bar .container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#Top_bar .column.one {
+  min-height: unset !important;
+}
+
+@media (max-width: 959px) {
+  #Top_bar .top_bar_left {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .responsive-menu-toggle i {
+    color: rgba(255,255,255,0.90) !important;
+  }
 }
