@@ -757,7 +757,7 @@ img {
 /* The badge */
 #Subheader h4.title {
   /* push it DOWN from the banner */
-  margin-top: 18px !important;     /* increase to 24-34px if you want even lower */
+  margin-top: 30px !important;     /* increase to 24-34px if you want even lower */
   margin-bottom: 14px !important;
 
   /* typography */
