@@ -71,13 +71,22 @@ a.mfn-link-1:after {
   gap: 40px;
   max-width: 1400px;
   margin: 0 auto;
+
+  align-items: stretch; /* IMPORTANT: equal-height cards per row */
 }
 
 /* Make theme columns behave inside our grid */
 .featured-grid .column {
   float: none !important;
   width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+
+  display: flex;          /* IMPORTANT: allow card to stretch */
+  align-items: stretch;   /* IMPORTANT */
 }
+
 
 /* ===============================
    Featured Cards
@@ -93,13 +102,15 @@ a.mfn-link-1:after {
 
   display: flex;
   flex-direction: column;
+
+  width: 100%;
+  height: 100%;           /* IMPORTANT: fill grid cell height */
 }
 
 .featured-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 18px 42px rgba(0,0,0,0.14);
 }
-
 
 /* Cover images: no cropping */
 .featured-card .cover {
@@ -125,6 +136,15 @@ a.mfn-link-1:after {
   margin: 0 0 14px 0;
 }
 
+/* Optional: clamp title height for cleaner alignment across cards */
+
+.featured-card .pub-title{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .featured-card .pub-title:hover {
   color: #a87f1f;
 }
@@ -140,6 +160,8 @@ a.mfn-link-1:after {
   font-size: 1.1em;
   font-weight: 600;
   color: #333;
+
+  margin-top: auto; /* IMPORTANT: pin meta to bottom of card */
 }
 
 
@@ -171,6 +193,8 @@ a.mfn-link-1:after {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+
+  align-items: stretch !important; /* IMPORTANT: equal-height cards per row */
 }
 
 /* Kill theme column sizing inside our grid */
@@ -180,9 +204,40 @@ a.mfn-link-1:after {
   margin: 0 !important;
   padding: 0 !important;     /* IMPORTANT: theme padding can crush the grid */
   box-sizing: border-box;
+
+  display: flex !important;      /* IMPORTANT */
+  align-items: stretch !important;
+}
+
+/* Make sure the card stretches inside the theme wrappers */
+.featured-pubs .featured-grid > .column .column_attr{
+  width: 100%;
 }
 
 /* Make sure the parent row isn't forcing a strange layout */
 .featured-pubs .items_group{
   display: block !important;
+}
+
+
+/* ===============================
+   Responsive tweak
+================================ */
+
+@media (max-width: 1100px){
+  .featured-grid,
+  .featured-pubs .featured-grid{
+    grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 720px){
+  .featured-grid,
+  .featured-pubs .featured-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .featured-card .cover{
+    height: 280px;
+  }
 }
