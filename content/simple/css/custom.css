@@ -27,7 +27,7 @@ a.mfn-link-1:after {
 
 
 /* ===============================
-   General Typography
+   General Typography (Home)
 ================================ */
 
 .project-text {
@@ -49,6 +49,20 @@ a.mfn-link-1:after {
 
 
 /* ===============================
+   Site Width Control (Safe)
+================================ */
+
+.container,
+.section_wrapper,
+.content_wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ===============================
    Featured Publications Layout
 ================================ */
 
@@ -64,27 +78,42 @@ a.mfn-link-1:after {
   margin: 10px 0 20px 0;
 }
 
-/* Grid layout for the 3 cards */
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  gap: 40px;
-  max-width: 1400px;
-  margin: 0 auto;
+/* Grid wrapper */
+.featured-pubs .featured-grid{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(300px, 1fr)) !important;
+  gap: 40px !important;
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
 
-  align-items: stretch; /* IMPORTANT: equal-height cards per row */
+  /* equal-height cards per row */
+  align-items: stretch !important;
+  grid-auto-rows: 1fr !important;
 }
 
-/* Make theme columns behave inside our grid */
-.featured-grid .column {
+/* Kill theme column sizing inside our grid + allow stretching */
+.featured-pubs .featured-grid > .column{
   float: none !important;
   width: auto !important;
   margin: 0 !important;
   padding: 0 !important;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 
-  display: flex;          /* IMPORTANT: allow card to stretch */
-  align-items: stretch;   /* IMPORTANT */
+  display: flex !important;
+  align-items: stretch !important;
+  height: 100% !important;
+}
+
+/* Card wrapper inside theme */
+.featured-pubs .featured-grid > .column .column_attr{
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Make sure the parent row isn't forcing a strange layout */
+.featured-pubs .items_group{
+  display: block !important;
 }
 
 
@@ -104,7 +133,7 @@ a.mfn-link-1:after {
   flex-direction: column;
 
   width: 100%;
-  height: 100%;           /* IMPORTANT: fill grid cell height */
+  height: 100%;
 }
 
 .featured-card:hover {
@@ -134,11 +163,8 @@ a.mfn-link-1:after {
   font-weight: 700;
   color: #c89a2b;  /* dark gold */
   margin: 0 0 14px 0;
-}
 
-/* Optional: clamp title height for cleaner alignment across cards */
-
-.featured-card .pub-title{
+  /* clamp for consistency */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -160,10 +186,8 @@ a.mfn-link-1:after {
   font-size: 1.1em;
   font-weight: 600;
   color: #333;
-
-  margin-top: auto; /* IMPORTANT: pin meta to bottom of card */
+  margin-top: auto; /* pin meta to bottom */
 }
-
 
 /* Make links clean */
 .featured-card a {
@@ -172,88 +196,37 @@ a.mfn-link-1:after {
 
 
 /* ===============================
-   Site Width Control (Safe)
-================================ */
-
-/* Makes site wider but does NOT break theme internals */
-.container,
-.section_wrapper,
-.content_wrapper {
-  width: 100%;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* --- Featured Publications: force the grid to work with the theme --- */
-.featured-pubs .featured-grid{
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  gap: 40px;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-
-  align-items: stretch !important; /* IMPORTANT: equal-height cards per row */
-}
-
-/* Kill theme column sizing inside our grid */
-.featured-pubs .featured-grid > .column{
-  float: none !important;
-  width: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;     /* IMPORTANT: theme padding can crush the grid */
-  box-sizing: border-box;
-
-  display: flex !important;      /* IMPORTANT */
-  align-items: stretch !important;
-}
-
-/* Make sure the card stretches inside the theme wrappers */
-.featured-pubs .featured-grid > .column .column_attr{
-  width: 100%;
-}
-
-/* Make sure the parent row isn't forcing a strange layout */
-.featured-pubs .items_group{
-  display: block !important;
-}
-
-
-/* ===============================
-   Responsive tweak
+   Featured Responsive
 ================================ */
 
 @media (max-width: 1100px){
-  .featured-grid,
   .featured-pubs .featured-grid{
     grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
   }
 }
 
 @media (max-width: 720px){
-  .featured-grid,
   .featured-pubs .featured-grid{
     grid-template-columns: 1fr !important;
   }
-
   .featured-card .cover{
     height: 280px;
   }
 }
 
+
 /* ===============================
-   Members page layout override
+   Members page layout + photo
 ================================ */
 
 /* Make team columns wider */
 .column_our_team {
-  width: 42% !important;   /* instead of 33% */
+  width: 42% !important;
   margin-left: 4% !important;
   margin-right: 4% !important;
 }
 
-/* On smaller screens, keep it readable */
+/* On smaller screens */
 @media (max-width: 1100px) {
   .column_our_team {
     width: 80% !important;
@@ -262,19 +235,14 @@ a.mfn-link-1:after {
   }
 }
 
-/* ===============================
-   Bigger profile photo
-================================ */
-
-/* Enlarge the entire image frame */
+/* Bigger profile photo */
 .column_our_team .image_frame {
-  transform: none !important;    /* remove weird scale hacks */
+  transform: none !important;
   width: 280px !important;
   height: 280px !important;
   margin: 0 auto !important;
 }
 
-/* Ensure the image fills the frame cleanly */
 .column_our_team .image_wrapper img {
   width: 100% !important;
   height: 100% !important;
@@ -283,81 +251,17 @@ a.mfn-link-1:after {
   max-width: none !important;
 }
 
-/* Make circular photo actually circular */
 .column_our_team .image_frame,
 .column_our_team .image_wrapper,
 .column_our_team img {
   border-radius: 50% !important;
 }
 
-/* ===============================
-   Members page typography upgrade
-   (match Home page scale)
-================================ */
-
-/* Name (e.g. Dr. Weiran Feng) */
-.column_our_team h4 {
-  font-size: 26px !important;   /* similar to section-title scale */
-  font-weight: 700 !important;
-  margin-bottom: 8px !important;
-}
-
-/* Role subtitle */
-.column_our_team .subtitle {
-  font-size: 18px !important;
-  line-height: 1.5 !important;
-  color: #555 !important;
-}
-
-/* Bio text (education, mentor, etc.) */
-.column_our_team .desc {
-  font-size: 18px !important;   /* matches .project-text */
-  line-height: 1.6 !important;
-  color: #444 !important;
-}
-
-/* Make spacing cleaner */
-.column_our_team .desc_wrapper {
-  margin-top: 30px !important;
-}
-
-/* Make hr consistent with rest of site */
-.column_our_team .hr_color {
-  margin: 14px 0 !important;
-}
-
-
-/* ===============================
-   Responsive scaling (like home page)
-================================ */
-
-@media (max-width: 1100px) {
-  .column_our_team h4 {
-    font-size: 24px !important;
-  }
-
-  .column_our_team .subtitle,
-  .column_our_team .desc {
-    font-size: 17px !important;
-  }
-}
-
-@media (max-width: 720px) {
-  .column_our_team h4 {
-    font-size: 22px !important;
-  }
-
-  .column_our_team .subtitle,
-  .column_our_team .desc {
-    font-size: 16px !important;
-  }
-}
 
 /* ===============================
    Global Dark Theme (refined)
 ================================ */
 
-/* Page background */
 body {
   background: #0b0b0b !important;   /* soft black */
   color: #e0e0e0 !important;        /* softer white */
@@ -377,12 +281,11 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #d4b15f; /* elegant gold */
 }
-
 a:hover {
   color: #f2d37a;
 }
 
-/* Header, content, footer containers */
+/* Header/content/footer containers */
 #Header_wrapper,
 #Top_bar,
 #Subheader,
@@ -395,213 +298,40 @@ a:hover {
   color: #e0e0e0 !important;
 }
 
-/* Menu */
-#menu span,
-.menu a {
-  color: #e0e0e0 !important;
-}
-
 /* Horizontal rules */
 hr {
   border-color: rgba(255,255,255,0.15) !important;
 }
 
-
-/* ===============================
-   Members page (dark mode)
-================================ */
-
-/* Team blocks now dark too */
-.column_our_team .team {
-  background: transparent !important;
-}
-
-/* All text inside members stays white */
-.column_our_team,
-.column_our_team h4,
-.column_our_team .subtitle,
-.column_our_team .desc,
-.column_our_team p,
-.column_our_team span {
-  color: #e0e0e0 !important;
-}
-
-/* Subtle divider line */
-.column_our_team .hr_color {
-  border-color: rgba(255,255,255,0.2) !important;
+/* Images: slight normalization on dark */
+img {
+  filter: brightness(0.97) contrast(1.02);
 }
 
 
 /* ===============================
-   KEEP Featured Publication cards light
+   Keep Featured Publication cards light
 ================================ */
 
 .featured-card {
   background: #ffffff !important;
   color: #000 !important;
 }
-
 .featured-card * {
   color: #000 !important;
 }
 
 
 /* ===============================
-   Optional polish tweaks
+   Top Menu – dark theme refinement + hover gold
 ================================ */
 
-/* Make section titles pop slightly */
-.section-title,
-.featured-pubs-title h2 {
-  letter-spacing: 0.3px;
-}
-
-/* Images look nicer on dark background */
-img {
-  filter: brightness(0.97) contrast(1.02);
-}
-
-/* ===============================
-   Top Menu – dark theme refinement
-================================ */
-
-/* Menu container */
 #Top_bar {
-  background: #0b0b0b !important;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background-color: #0b0b0b !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
 }
 
-/* Menu items default */
-#menu > ul > li > a,
-#menu span {
-  color: #e0e0e0 !important;
-  font-weight: 500;
-  letter-spacing: 0.4px;
-  transition: color 0.2s ease, transform 0.15s ease;
-}
-
-/* Restore gold hover effect */
-#menu > ul > li > a:hover,
-#menu > ul > li.current_page_item > a {
-  color: #d4b15f !important;   /* gold */
-}
-
-/* Subtle hover lift (feels responsive, not flashy) */
-#menu > ul > li > a:hover span {
-  transform: translateY(-1px);
-}
-
-/* Remove ugly theme background hover */
-#menu > ul > li:hover > a {
-  background: transparent !important;
-}
-
-/* Optional: subtle underline on hover */
-#menu > ul > li > a span {
-  position: relative;
-}
-
-#menu > ul > li > a span:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: #d4b15f;
-  transition: width 0.25s ease;
-}
-
-#menu > ul > li > a:hover span:after,
-#menu > ul > li.current_page_item > a span:after {
-  width: 100%;
-}
-
-/* Mobile menu icon */
-.responsive-menu-toggle i {
-  color: #e0e0e0 !important;
-}
-
-/* Make menu spacing feel cleaner */
-#menu > ul > li > a {
-  padding: 18px 14px !important;
-}
-
-/* =========================================================
-   MEMBERS PAGE FIX (dark theme): restore text + scale fonts
-   Put this at the VERY END of custom.css
-========================================================= */
-
-/* --- Ensure members section text is NEVER black --- */
-.column_our_team,
-.column_our_team * {
-  color: #e0e0e0 !important;
-}
-
-/* If theme applies opacity/filters, neutralize */
-.column_our_team .desc_wrapper,
-.column_our_team .desc_wrapper * {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* --- Bigger, responsive typography (home-page-like scaling) --- */
-.column_our_team h4 {
-  font-size: calc(22px + (30 - 22) * ((100vw - 400px) / (1200 - 400))) !important;
-  line-height: 1.15 !important;
-  font-weight: 700 !important;
-  margin-bottom: 10px !important;
-}
-
-.column_our_team .subtitle {
-  font-size: calc(16px + (20 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
-  line-height: 1.45 !important;
-  color: #cfcfcf !important;
-}
-
-.column_our_team .desc {
-  font-size: calc(16px + (19 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
-  line-height: 1.6 !important;
-  color: #e0e0e0 !important;
-}
-
-/* --- HR line in members --- */
-.column_our_team .hr_color {
-  border-color: rgba(255,255,255,0.18) !important;
-  margin: 14px 0 !important;
-}
-
-/* --- Make Alumni + Join Us text bigger too (these use .column_attr.big) --- */
-.column_attr.big,
-.column_attr.big p,
-.column_attr.big ul,
-.column_attr.big li {
-  font-size: calc(16px + (19 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
-  line-height: 1.7 !important;
-  color: #e0e0e0 !important;
-}
-
-/* The Alumni/JoinUs blocks use <ul> with <br> (not real <li>) — keep it readable */
-.column_attr.big ul {
-  list-style: none !important;
-  padding-left: 0 !important;
-  margin-left: 0 !important;
-}
-
-/* --- Email icon should still be visible on dark --- */
-.column_our_team .icon_bar i {
-  color: #d4b15f !important;
-}
-.column_our_team .icon_bar:hover i {
-  color: #f2d37a !important;
-}
-
-/* =========================================================
-   FIX: white bar behind menu on dark theme
-   (put at VERY END of custom.css)
-========================================================= */
-
-/* Kill any theme-injected white backgrounds in the header/menu area */
+/* Kill any theme-injected white backgrounds in header/menu area */
 #Top_bar,
 #Top_bar .container,
 #Top_bar .top_bar_left,
@@ -616,14 +346,7 @@ img {
   background: transparent !important;
 }
 
-/* Force the actual header area to be dark */
-#Header_wrapper,
-#Header,
-#Top_bar {
-  background-color: #0b0b0b !important;
-}
-
-/* Sometimes the theme adds a white "bar" via pseudo-elements */
+/* Sometimes theme draws bars with pseudo-elements */
 #Top_bar:before,
 #Top_bar:after,
 #Header_wrapper:before,
@@ -631,20 +354,153 @@ img {
   background: transparent !important;
 }
 
-/* Menu text visibility (avoid washed out light gray) */
+/* Menu default */
 #menu > ul > li > a,
-#menu > ul > li > a span {
+#menu > ul > li > a span,
+#menu span,
+.menu a {
   color: #e0e0e0 !important;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  transition: color 0.2s ease, transform 0.15s ease;
 }
 
-/* Gold hover + current page */
+/* Gold hover + current */
 #menu > ul > li > a:hover,
 #menu > ul > li.current_page_item > a,
 #menu > ul > li.current_page_item > a span {
   color: #d4b15f !important;
 }
 
-/* Optional: subtle bottom divider line */
-#Top_bar {
-  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+/* Remove ugly theme hover background */
+#menu > ul > li:hover > a {
+  background: transparent !important;
+}
+
+/* Underline animation */
+#menu > ul > li > a span {
+  position: relative;
+}
+#menu > ul > li > a span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #d4b15f;
+  transition: width 0.25s ease;
+}
+#menu > ul > li > a:hover span:after,
+#menu > ul > li.current_page_item > a span:after {
+  width: 100%;
+}
+
+/* Subtle hover lift */
+#menu > ul > li > a:hover span {
+  transform: translateY(-1px);
+}
+
+/* Spacing */
+#menu > ul > li > a {
+  padding: 18px 14px !important;
+}
+
+/* Mobile icon */
+.responsive-menu-toggle i {
+  color: #e0e0e0 !important;
+}
+
+
+/* =========================================================
+   MEMBERS PAGE – FINAL (dark): FIX hidden text + larger fonts
+   (cleanup: removed old #444/#555 member colors)
+========================================================= */
+
+/* Make sure team widget doesn't clip/hide text */
+.column_our_team .team,
+.column_our_team .team_circle,
+.column_our_team .desc_wrapper {
+  overflow: visible !important;
+}
+
+/* Force text to exist + be visible */
+.column_our_team .desc_wrapper,
+.column_our_team .desc,
+.column_our_team .subtitle,
+.column_our_team h4 {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Bring text above overlays */
+.column_our_team .desc_wrapper {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Subtle dark panel */
+.column_our_team .team {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 22px !important;
+  padding: 34px 26px !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45) !important;
+}
+
+/* Ensure members text is never black */
+.column_our_team,
+.column_our_team * {
+  color: #e0e0e0 !important;
+}
+
+/* Responsive typography (home-page-like scaling) */
+.column_our_team h4 {
+  font-size: calc(22px + (30 - 22) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.15 !important;
+  font-weight: 750 !important;
+  margin: 18px 0 10px 0 !important;
+}
+
+.column_our_team .subtitle {
+  font-size: calc(16px + (20 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.45 !important;
+  color: #cfcfcf !important;
+  margin-bottom: 10px !important;
+}
+
+.column_our_team .desc {
+  font-size: calc(16px + (19 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.65 !important;
+}
+
+/* HR line */
+.column_our_team .hr_color {
+  border-color: rgba(255,255,255,0.18) !important;
+  margin: 14px 0 !important;
+}
+
+/* Alumni + JoinUs blocks (use .column_attr.big) */
+.column_attr.big,
+.column_attr.big p,
+.column_attr.big ul,
+.column_attr.big li {
+  font-size: calc(16px + (19 - 16) * ((100vw - 400px) / (1200 - 400))) !important;
+  line-height: 1.7 !important;
+  color: #e0e0e0 !important;
+}
+
+.column_attr.big ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Email icon */
+.column_our_team .icon_bar i {
+  color: #d4b15f !important;
+}
+.column_our_team .icon_bar:hover i {
+  color: #f2d37a !important;
 }
