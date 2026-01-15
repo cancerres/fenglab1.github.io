@@ -617,3 +617,42 @@ img {
 .column_our_team .icon_bar:hover i {
   color: #f2d37a !important;
 }
+
+/* =========================================================
+   MEMBERS – restore gold divider + fix email icon
+   (put at VERY END of custom.css)
+========================================================= */
+
+/* Restore gold divider line between title and degrees */
+.column_our_team .hr_color {
+  border-color: #d4b15f !important;   /* gold */
+  background-color: #d4b15f !important;
+  height: 2px !important;
+  opacity: 1 !important;
+}
+
+/* Remove ugly white box behind email icon */
+.column_our_team .icon_bar {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Icon itself */
+.column_our_team .icon_bar i {
+  color: #d4b15f !important;
+  font-size: 22px;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+/* Hover effect */
+.column_our_team .icon_bar:hover i {
+  color: #f2d37a !important;
+  transform: translateY(-1px);
+}
+
+/* Also kill theme pseudo background layers */
+.column_our_team .icon_bar .t,
+.column_our_team .icon_bar .b {
+  background: transparent !important;
+}
