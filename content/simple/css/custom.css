@@ -689,174 +689,16 @@ img {
 }
 
 /* =========================================================
-   HOME: make "Mechanisms and Vulnerabilities..." stand out
-   (subheader hero title under the banner)
-========================================================= */
-
-/* Make sure the subheader area is the positioning context */
-#Subheader .container .column.one {
-  position: relative !important;
-}
-
-/* Target the exact title line */
-#Subheader h4.title {
-  /* spacing */
-  margin-top: -14px !important;     /* pull closer to banner */
-  margin-bottom: 12px !important;
-
-  /* typography */
-  font-size: clamp(22px, 2.2vw, 34px) !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.4px !important;
-  line-height: 1.15 !important;
-  text-align: center !important;
-
-  /* color + emphasis */
-  color: #ffffff !important;
-  text-shadow: 0 6px 18px rgba(0,0,0,0.65) !important;
-
-  /* “badge” style */
-  display: inline-block !important;
-  padding: 12px 18px !important;
-  border-radius: 14px !important;
-  background: rgba(0,0,0,0.55) !important;
-  border: 1px solid rgba(255,255,255,0.14) !important;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-/* Center the badge even though it's inline-block */
-#Subheader h4.title {
-  left: 50%;
-  transform: translateX(-50%);
-  position: relative;
-}
-
-/* Add a gold underline accent */
-#Subheader h4.title::after {
-  content: "";
-  display: block;
-  width: min(220px, 70%);
-  height: 3px;
-  margin: 10px auto 0 auto;
-  border-radius: 999px;
-  background: rgba(212,177,95,0.95); /* gold */
-  box-shadow: 0 0 18px rgba(212,177,95,0.22);
-}
-
-/* =========================================================
-   HOME: hero badge for "Mechanisms and Vulnerabilities..."
-   - pushed DOWN from banner
-   - subtle emphasis (not overwhelming)
-========================================================= */
-
-#Subheader .container .column.one { 
-  position: relative !important; 
-}
-
-/* The badge */
-#Subheader h4.title {
-  /* push it DOWN from the banner */
-  margin-top: 30px !important;     /* increase to 24-34px if you want even lower */
-  margin-bottom: 14px !important;
-
-  /* typography */
-  font-size: clamp(22px, 2.2vw, 34px) !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.4px !important;
-  line-height: 1.15 !important;
-  text-align: center !important;
-  color: #ffffff !important;
-  text-shadow: 0 6px 18px rgba(0,0,0,0.55) !important;
-
-  /* badge surface: soft gradient + glass */
-  display: inline-block !important;
-  padding: 14px 20px !important;
-  border-radius: 16px !important;
-
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.10) 0%,
-    rgba(0,0,0,0.55) 55%,
-    rgba(0,0,0,0.45) 100%
-  ) !important;
-
-  border: 1px solid rgba(255,255,255,0.14) !important;
-
-  /* gentle depth */
-  box-shadow:
-    0 18px 42px rgba(0,0,0,0.45),
-    0 1px 0 rgba(255,255,255,0.08) inset,
-    0 0 0 1px rgba(212,177,95,0.14) inset !important;
-
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
-  /* center the inline badge */
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* gold underline accent */
-#Subheader h4.title::after {
-  content: "";
-  display: block;
-  width: min(240px, 72%);
-  height: 3px;
-  margin: 12px auto 0 auto;
-  border-radius: 999px;
-  background: rgba(212,177,95,0.95);
-  box-shadow: 0 0 22px rgba(212,177,95,0.18);
-}
-
-/* Optional: subtle gold "aura" behind badge (very light) */
-#Subheader h4.title::before {
-  content: "";
-  position: absolute;
-  inset: -12px -16px;
-  border-radius: 20px;
-  background: radial-gradient(circle at 50% 30%, rgba(212,177,95,0.18), transparent 60%);
-  filter: blur(10px);
-  opacity: 0.55;
-  z-index: -1;
-}
-
-/* Optional: tiny hover lift (won’t trigger on mobile) */
-@media (hover: hover) {
-  #Subheader h4.title {
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
-  }
-  #Subheader h4.title:hover {
-    transform: translateX(-50%) translateY(-2px);
-    box-shadow:
-      0 24px 60px rgba(0,0,0,0.55),
-      0 1px 0 rgba(255,255,255,0.09) inset,
-      0 0 0 1px rgba(212,177,95,0.20) inset !important;
-  }
-}
-
-/* Keep banner spacing neutral (don’t pull title up) */
-#Subheader img {
-  margin-bottom: 0 !important;
-}
-/* =========================================================
    HOME: Premium headline (no box badge)
    Emphasis via type + gold rule + soft glow
 ========================================================= */
 
-/* Ensure positioning context */
-#Subheader .container .column.one {
-  position: relative !important;
-}
+#Subheader .container .column.one { position: relative !important; }
 
-/* The headline under banner */
 #Subheader h4.title {
-  /* placement */
-  margin-top: 26px !important;     /* push down from banner */
+  margin-top: 42px !important;    /* <-- push DOWN from banner */
   margin-bottom: 18px !important;
 
-  /* type */
   font-size: clamp(26px, 2.6vw, 40px) !important;
   font-weight: 850 !important;
   letter-spacing: 0.6px !important;
@@ -864,12 +706,10 @@ img {
   text-align: center !important;
   color: #ffffff !important;
 
-  /* premium readability */
   text-shadow:
     0 2px 0 rgba(0,0,0,0.55),
     0 10px 26px rgba(0,0,0,0.45) !important;
 
-  /* remove any prior "badge box" */
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -878,7 +718,6 @@ img {
   position: relative;
 }
 
-/* Subtle gold rule under the line (clean + pro) */
 #Subheader h4.title::after {
   content: "";
   display: block;
@@ -895,7 +734,6 @@ img {
   opacity: 0.95;
 }
 
-/* Soft spotlight behind the text (not a box) */
 #Subheader h4.title::before {
   content: "";
   position: absolute;
@@ -916,7 +754,5 @@ img {
   pointer-events: none;
 }
 
-/* Optional: make the banner/title feel connected */
-#Subheader img {
-  margin-bottom: 10px !important;  /* keep a little breathing room */
-}
+/* keep a little breathing room under banner */
+#Subheader img { margin-bottom: 10px !important; }
