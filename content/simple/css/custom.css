@@ -618,3 +618,33 @@ img {
   color: #f2d37a !important;
 }
 
+/* ===============================
+   Header polish: structure + spacing
+================================ */
+
+/* Give the top bar a consistent dark surface */
+#Top_bar {
+  background: #0b0b0b !important;
+  border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+}
+
+/* Put logo + menu on one line (desktop) */
+#Top_bar .top_bar_left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+}
+
+/* Logo block: keep compact */
+#Top_bar .logo {
+  flex: 0 0 auto !important;
+  padding: 12px 0 !important;
+}
+
+/* Menu block */
+#Top_bar .menu_wrapper {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
