@@ -353,3 +353,111 @@ a.mfn-link-1:after {
   }
 }
 
+/* ===============================
+   Global Dark Theme (refined)
+================================ */
+
+/* Page background */
+body {
+  background: #0b0b0b !important;   /* soft black */
+  color: #e0e0e0 !important;        /* softer white */
+}
+
+/* General text */
+p, li, ul, ol, span, div {
+  color: #e0e0e0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
+/* Links */
+a {
+  color: #d4b15f; /* elegant gold */
+}
+
+a:hover {
+  color: #f2d37a;
+}
+
+/* Header, content, footer containers */
+#Header_wrapper,
+#Top_bar,
+#Subheader,
+#Content,
+.section_wrapper,
+.content_wrapper,
+#Footer,
+.footer_copy {
+  background: #0b0b0b !important;
+  color: #e0e0e0 !important;
+}
+
+/* Menu */
+#menu span,
+.menu a {
+  color: #e0e0e0 !important;
+}
+
+/* Horizontal rules */
+hr {
+  border-color: rgba(255,255,255,0.15) !important;
+}
+
+
+/* ===============================
+   Members page (dark mode)
+================================ */
+
+/* Team blocks now dark too */
+.column_our_team .team {
+  background: transparent !important;
+}
+
+/* All text inside members stays white */
+.column_our_team,
+.column_our_team h4,
+.column_our_team .subtitle,
+.column_our_team .desc,
+.column_our_team p,
+.column_our_team span {
+  color: #e0e0e0 !important;
+}
+
+/* Subtle divider line */
+.column_our_team .hr_color {
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
+
+/* ===============================
+   KEEP Featured Publication cards light
+================================ */
+
+.featured-card {
+  background: #ffffff !important;
+  color: #000 !important;
+}
+
+.featured-card * {
+  color: #000 !important;
+}
+
+
+/* ===============================
+   Optional polish tweaks
+================================ */
+
+/* Make section titles pop slightly */
+.section-title,
+.featured-pubs-title h2 {
+  letter-spacing: 0.3px;
+}
+
+/* Images look nicer on dark background */
+img {
+  filter: brightness(0.97) contrast(1.02);
+}
+
