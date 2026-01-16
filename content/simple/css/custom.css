@@ -653,3 +653,35 @@ img {
   height: auto;       /* keep full image */
   object-fit: contain;
 }
+
+/* ===============================
+   Restore timeline center line (News page)
+================================ */
+
+/* The vertical middle line */
+.timeline_items {
+  position: relative !important;
+}
+
+.timeline_items:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255,255,255,0.15);  /* subtle light line */
+  transform: translateX(-50%);
+}
+
+/* The little connector dots/arrows */
+.timeline_items li:before {
+  background: #d4b15f !important;      /* gold accent */
+  border-color: #d4b15f !important;
+}
+
+/* Make sure it doesn't get hidden by wrappers */
+.timeline_items,
+.timeline_items * {
+  overflow: visible !important;
+}
