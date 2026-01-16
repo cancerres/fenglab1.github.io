@@ -604,3 +604,29 @@ img {
   margin-right: auto !important;
   display: block !important;
 }
+
+/* ===============================
+   NEWS PAGE — increase date + description size
+================================ */
+
+/* The whole timeline item title line */
+.timeline_items li h3 {
+  font-size: 22px !important;   /* was smaller; bump headline */
+  line-height: 1.4 !important;
+}
+
+/* The date part (inside <span>) */
+.timeline_items li h3 span {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #d4b15f !important;   /* keep it gold for hierarchy */
+  margin-right: 10px;
+}
+
+/* The description paragraph */
+.timeline_items li .desc {
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+  margin-top: 6px;
+  color: #e0e0e0 !important;
+}
