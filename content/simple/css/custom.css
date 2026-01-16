@@ -699,3 +699,45 @@ img {
   overflow: visible !important;
 }
 
+/* ===============================
+   PHOTO GALLERY STYLING
+================================ */
+
+.photo-item {
+  float: left;
+  width: 30% !important;
+  margin: 1.5% !important;
+}
+
+.photo-card {
+  background: #111;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.photo-card img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.photo-caption {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #e6e6e6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .photo-item {
+    width: 46% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-item {
+    width: 100% !important;
+  }
+}
