@@ -654,34 +654,48 @@ img {
   object-fit: contain;
 }
 
-/* ===============================
-   Restore timeline center line (News page)
-================================ */
+/* =========================================================
+   NEWS timeline: restore the SEGMENTED center line (per item)
+   - matches the earlier screenshot look
+========================================================= */
 
-/* The vertical middle line */
+/* Turn OFF the continuous line if you added it earlier */
+.timeline_items:before {
+  content: none !important;
+}
+
+/* Make sure timeline is positioning context */
 .timeline_items {
   position: relative !important;
 }
 
-.timeline_items:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: rgba(255,255,255,0.15);  /* subtle light line */
-  transform: translateX(-50%);
+/* Each item draws its own segment on the center axis */
+.timeline_items li {
+  position: relative !important;
 }
 
-/* The little connector dots/arrows */
+/* Segment line for each item (the “broken” look) */
+.timeline_items li:after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 14px !important;            /* start a bit below the marker */
+  bottom: 14px !important;         /* end a bit above next marker */
+  width: 2px !important;
+  transform: translateX(-50%) !important;
+  background: rgba(255,255,255,0.14) !important;  /* subtle on dark */
+  pointer-events: none !important;
+}
+
+/* Keep the gold marker/connector visible */
 .timeline_items li:before {
-  background: #d4b15f !important;      /* gold accent */
+  background: #d4b15f !important;
   border-color: #d4b15f !important;
 }
 
-/* Make sure it doesn't get hidden by wrappers */
+/* If any wrapper is clipping pseudo-elements */
 .timeline_items,
-.timeline_items * {
+.timeline_items li {
   overflow: visible !important;
 }
+
