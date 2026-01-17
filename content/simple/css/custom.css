@@ -1032,3 +1032,13 @@ img {
 .contact-page .get_in_touch ul li.phone .icon i{
   transform: translateY(-1px) !important;   /* tweak: try -2px if needed */
 }
+
+/* CONTACT — force phone glyph centering (even if icon font has weird baseline) */
+body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
+  position: relative !important;
+  top: -2px !important;          /* try -3px if still low */
+  line-height: 1 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
