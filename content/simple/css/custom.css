@@ -12,15 +12,11 @@
 ================================ */
 
 .zlab_caption {
-  font-size: calc(40px + (50 - 40) * ((100vw - 400px) / (800 - 400)));
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
-/* Subtle spacing polish only */
-.zlab_caption {
+  font-size: clamp(26px, 3.0vw, 38px) !important;  /* smaller, controlled */
   margin-top: 12px !important;
   margin-bottom: 10px !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.6px !important;
 }
 
 /* ===============================
@@ -981,4 +977,37 @@ img {
   font-size: 19px !important;
   font-weight: 700 !important;
   color: #ffffff !important;
+}
+
+/* =========================================================
+   CONTACT PAGE — FINAL OVERRIDE (wins over flex + theme)
+   Put this as the LAST block in custom.css
+========================================================= */
+
+.contact-page .get_in_touch ul li{
+  display: grid !important;
+  grid-template-columns: 56px 1fr !important;
+  column-gap: 16px !important;
+  align-items: start !important;
+  padding: 0 !important;
+}
+
+/* kill any theme offsets applied to children */
+.contact-page .get_in_touch ul li *{
+  float: none !important;
+}
+
+.contact-page .get_in_touch ul li .icon{
+  grid-column: 1 !important;
+  margin: 0 !important;
+  width: 56px !important;
+  height: 56px !important;
+}
+
+.contact-page .get_in_touch ul li .address_wrapper,
+.contact-page .get_in_touch ul li p{
+  grid-column: 2 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: static !important;
 }
