@@ -887,3 +887,8 @@ img {
 /* IMPORTANT: do NOT touch subheader title sizing globally.
    If you accidentally changed it earlier elsewhere in custom.css,
    remove that rule instead of overriding it here. */
+
+.contact-page .get_in_touch ul,
+.contact-page .get_in_touch li{
+  width: 100% !important;
+}
