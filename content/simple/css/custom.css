@@ -810,113 +810,60 @@ img {
 }
 
 /* =========================================================
-   CONTACT PAGE — make text larger + consistent with other tabs
+   CONTACT PAGE ONLY — text sizing + icon blocks (scoped)
+   Requires: <body class="... contact-page">
 ========================================================= */
 
 /* Main contact text (address, phone, email) */
-.get_in_touch,
-.get_in_touch p,
-.get_in_touch li,
-.get_in_touch .address_wrapper {
+.contact-page .get_in_touch,
+.contact-page .get_in_touch p,
+.contact-page .get_in_touch li,
+.contact-page .get_in_touch .address_wrapper {
   font-size: 18px !important;
   line-height: 1.65 !important;
   color: #e0e0e0 !important;
 }
 
 /* Bold labels like "Office Address" */
-.get_in_touch strong {
+.contact-page .get_in_touch strong {
   font-size: 19px !important;
   font-weight: 700 !important;
   color: #ffffff !important;
 }
 
-/* Icons (location, phone, mail) */
-.get_in_touch .icon i {
-  font-size: 22px !important;
-  color: #d4b15f !important; /* keep your gold accent */
-}
-
-/* Phone/email lines */
-.get_in_touch .phone p,
-.get_in_touch .mail p {
-  font-size: 18px !important;
-}
-
-/* Subheader title on Contact page */
-#Subheader h1.title {
-  font-size: clamp(30px, 3vw, 42px) !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.4px !important;
-}
-
-/* =========================================================
-   CONTACT PAGE — make icons bold with gold blocks
-========================================================= */
-
-/* Wrap the icon in a gold square */
-.get_in_touch .icon {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: #d4b15f;              /* gold block */
-  border-radius: 10px;              /* slightly rounded */
-  margin-right: 14px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.45);
-}
-
-/* Icon inside */
-.get_in_touch .icon i {
-  font-size: 22px !important;
-  color: #111 !important;           /* dark icon like your example */
-}
-
-/* Align text nicely next to the block */
-.get_in_touch li {
-  display: flex !important;
-  align-items: flex-start;
-  gap: 6px;
-  margin-bottom: 18px !important;
-}
-
-/* Keep text vertically aligned with icon */
-.get_in_touch .address_wrapper,
-.get_in_touch .phone p,
-.get_in_touch .mail p {
-  margin: 0 !important;
-}
-
-/* =========================================================
-   CONTACT PAGE ONLY — bold gold icon blocks
-========================================================= */
-
+/* Icon gold blocks */
 .contact-page .get_in_touch .icon {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: #d4b15f;
+  width: 50px;
+  height: 50px;
+  background: #d4b15f !important;
   border-radius: 10px;
   margin-right: 14px;
   box-shadow: 0 8px 22px rgba(0,0,0,0.45);
 }
 
+/* Dark icon inside the gold block */
 .contact-page .get_in_touch .icon i {
   font-size: 22px !important;
   color: #111 !important;
 }
 
+/* Layout: icon block + text aligned nicely */
 .contact-page .get_in_touch li {
   display: flex !important;
   align-items: flex-start;
-  gap: 6px;
   margin-bottom: 18px !important;
 }
 
+/* Remove extra spacing that can push things weirdly */
 .contact-page .get_in_touch .address_wrapper,
 .contact-page .get_in_touch .phone p,
 .contact-page .get_in_touch .mail p {
   margin: 0 !important;
 }
+
+/* IMPORTANT: do NOT touch subheader title sizing globally.
+   If you accidentally changed it earlier elsewhere in custom.css,
+   remove that rule instead of overriding it here. */
