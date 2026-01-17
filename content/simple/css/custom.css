@@ -1042,3 +1042,14 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
   vertical-align: middle !important;
 }
 
+/* ===============================
+   FEATURED PAPERS — one-line tagline
+================================ */
+
+.featured-card .pub-tagline {
+  font-size: 1.05em;
+  line-height: 1.55;
+  margin: 6px 0 0 0;
+  color: rgba(0,0,0,0.75);      /* subtle on white card */
+  font-style: italic;
+}
