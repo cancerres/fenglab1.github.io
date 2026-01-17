@@ -848,3 +848,41 @@ img {
   font-weight: 800 !important;
   letter-spacing: 0.4px !important;
 }
+
+/* =========================================================
+   CONTACT PAGE — make icons bold with gold blocks
+========================================================= */
+
+/* Wrap the icon in a gold square */
+.get_in_touch .icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #d4b15f;              /* gold block */
+  border-radius: 10px;              /* slightly rounded */
+  margin-right: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.45);
+}
+
+/* Icon inside */
+.get_in_touch .icon i {
+  font-size: 22px !important;
+  color: #111 !important;           /* dark icon like your example */
+}
+
+/* Align text nicely next to the block */
+.get_in_touch li {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 18px !important;
+}
+
+/* Keep text vertically aligned with icon */
+.get_in_touch .address_wrapper,
+.get_in_touch .phone p,
+.get_in_touch .mail p {
+  margin: 0 !important;
+}
