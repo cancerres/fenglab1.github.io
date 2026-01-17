@@ -851,11 +851,31 @@ img {
 }
 
 /* Layout: icon block + text aligned nicely */
-.contact-page .get_in_touch li {
+.contact-page .get_in_touch li{
   display: flex !important;
-  align-items: flex-start;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
   margin-bottom: 18px !important;
 }
+
+/* Keep the icon column fixed (prevents icon sitting above text) */
+.contact-page .get_in_touch .icon{
+  flex: 0 0 50px !important;
+  width: 50px !important;
+  height: 50px !important;
+  margin-right: 0 !important; /* gap handles spacing now */
+}
+
+/* Make the text area a proper right column */
+.contact-page .get_in_touch .address_wrapper,
+.contact-page .get_in_touch .phone p,
+.contact-page .get_in_touch .mail p{
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  display: block !important;
+}
+
 
 /* Remove extra spacing that can push things weirdly */
 .contact-page .get_in_touch .address_wrapper,
