@@ -1192,3 +1192,109 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
 #Top_bar #menu > ul > li > a span {
   font-size: 18px !important;
 }
+
+/* =========================================================
+   HEADER — CLEAN RESET + CENTER (logo + title + menu together)
+   Paste as the LAST header block in custom.css
+========================================================= */
+
+/* 0) Undo any earlier transforms/position nudges */
+#Top_bar .header-inner,
+#Top_bar .top_bar_left,
+#Top_bar .header-logo-col,
+#Top_bar img.lab-logo-tall{
+  transform: none !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+/* 1) Restore theme container centering (do NOT zero padding) */
+#Top_bar .container{
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+
+  /* IMPORTANT: prevent accidental flex layouts that pin left */
+  display: block !important;
+}
+
+/* 2) Ensure column doesn't behave like a flex row */
+#Top_bar .container .column.one{
+  display: block !important;
+  float: none !important;
+  width: 100% !important;
+}
+
+/* 3) Center the whole header group */
+#Top_bar .top_bar_left{
+  float: none !important;
+  width: 100% !important;
+
+  display: flex !important;
+  justify-content: center !important;   /* <-- centers logo+stack as a group */
+  align-items: center !important;
+  gap: 8px !important;                  /* <-- logo-to-text spacing (adjust 4–12) */
+
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/* 4) Logo column (no weird reserved space) */
+#Top_bar .header-logo-col{
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 5) Logo size: tall, but capped */
+#Top_bar img.lab-logo-tall{
+  display: block !important;
+  height: 100% !important;
+  max-height: 120px !important;   /* adjust 100–140 if needed */
+  width: auto !important;
+  object-fit: contain !important;
+  filter: none !important;
+}
+
+/* 6) Title + menu stack centered */
+#Top_bar .header-text-col{
+  flex: 0 1 auto !important;
+  min-width: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;        /* <-- centers title and menu */
+  gap: 6px !important;
+}
+
+/* Remove extra margins inside stack */
+#Top_bar .header-text-col .logo,
+#Top_bar .header-text-col .menu_wrapper{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Title spacing (prevents “too close to top”) */
+#Top_bar .zlab_caption{
+  margin: 0 !important;
+  padding-top: 4px !important;           /* adjust 0–8 */
+}
+
+/* 7) Menu: keep your old feel (font size + no left indent) */
+#Top_bar .menu_wrapper,
+#Top_bar #menu,
+#Top_bar #menu > ul,
+#Top_bar #menu-main-menu{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#Top_bar #menu > ul > li > a,
+#Top_bar #menu > ul > li > a span{
+  font-size: 18px !important;            /* adjust to your old look */
+  line-height: 1.2 !important;
+}
