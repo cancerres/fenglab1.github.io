@@ -1066,3 +1066,29 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
   font-style: italic;
 }
 
+/* ==========================================
+   FEATURED CARDS — align Journal + 2-line tagline
+========================================== */
+
+/* 1) Force the journal line to a consistent height */
+.featured-card .pub-meta{
+  display: block !important;
+  line-height: 1.25 !important;
+  min-height: 1.25em !important;   /* reserves one line */
+  margin-bottom: 4px !important;
+}
+
+/* 2) Force the tagline to always take TWO lines */
+.featured-card .pub-tagline{
+  font-size: 1.2em !important;
+  line-height: 1.55 !important;
+  min-height: calc(1.55em * 2) !important;  /* exactly 2 lines of space */
+  margin: 0 !important;
+  color: #000000 !important;
+
+  /* optional: keeps it clean if someone writes a long tagline */
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
