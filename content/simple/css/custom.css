@@ -1102,7 +1102,7 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
 #Top_bar .top_bar_left{
   display: flex !important;
   align-items: center !important;
-  gap: 2px !important;          /* ← ADJUST ONLY THIS (4–16px typical) */
+  gap: 4px !important;          /* ← ADJUST ONLY THIS (4–16px typical) */
 }
 
 /* Logo wrapper: no mystery margins */
@@ -1155,4 +1155,40 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
 #Top_bar #menu > ul > li > a span {
   font-size: 20px !important;   /* ← change this number only */
   line-height: 1.2 !important;
+}
+
+/* =========================================================
+   HEADER — restore centering of logo + title + menu group
+========================================================= */
+
+/* Restore theme container centering */
+#Top_bar .container {
+  max-width: 1400px !important;     /* same as your site width */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 20px !important;    /* restores proper centering */
+  padding-right: 20px !important;
+}
+
+/* Ensure the inner column does not stretch full screen */
+#Top_bar .column.one {
+  width: 100% !important;
+}
+
+/* Keep your logo + text layout intact */
+#Top_bar .top_bar_left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* Control logo distance from text */
+#Top_bar .header-logo-col {
+  margin-right: 8px !important;   /* ← adjust 4–12px only */
+}
+
+/* Menu font size (safe, isolated) */
+#Top_bar #menu > ul > li > a,
+#Top_bar #menu > ul > li > a span {
+  font-size: 18px !important;
 }
