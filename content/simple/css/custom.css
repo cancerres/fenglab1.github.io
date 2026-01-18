@@ -1267,3 +1267,11 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
   display: block !important;
   filter: none !important;
 }
+
+#Top_bar .header-inner{
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;        /* controls distance between logo and text */
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
