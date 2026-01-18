@@ -1186,3 +1186,56 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
   width: auto !important;
   object-fit: contain !important;
 }
+
+/* =========================================================
+   HEADER — reduce gap between LEFT (logo/caption) and RIGHT (menu)
+   Works when menu is in .top_bar_right (common in Muffin/BeTheme)
+   Paste at VERY END of custom.css
+========================================================= */
+
+/* Make the Top_bar inner layout a flex row (left + right) */
+#Top_bar .container .column.one .top_bar_left,
+#Top_bar .container .column.one .top_bar_right{
+  float: none !important;
+}
+
+/* Most themes already have a wrapper like .top_bar_inner or .top_bar_left/.top_bar_right.
+   Force the parent to flex so spacing is controllable. */
+#Top_bar .container .column.one .top_bar_left{
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* If the theme uses a parent wrapper, this catches it */
+#Top_bar .top_bar_left,
+#Top_bar .top_bar_right{
+  display: inline-flex !important;
+  vertical-align: middle !important;
+}
+
+/* Key: shrink reserved width on the left so the right can come closer */
+#Top_bar .top_bar_left{
+  width: auto !important;
+  flex: 0 0 auto !important;
+}
+
+/* Key: remove any forced margins/padding pushing menu away */
+#Top_bar .top_bar_right{
+  margin-left: 10px !important;     /* <-- adjust this: 0 to 16 */
+  padding-left: 0 !important;
+}
+
+/* If the theme is distributing space with "justify-content: space-between", kill that */
+#Top_bar .container,
+#Top_bar .container .column.one{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;   /* not space-between */
+  gap: 10px !important;                     /* controls the gap now */
+}
+
+/* Ensure menu wrapper doesn't re-add left spacing */
+#Top_bar .top_bar_right .menu_wrapper{
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
