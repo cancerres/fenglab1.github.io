@@ -50,48 +50,49 @@
             <div class="column one">
               <div class="top_bar_left clearfix loading">
 
-                <!-- main caption -->
-                <div class="header-logo-col">
-                  <img src="content/simple/images/lab_logo.png" alt="Feng Lab logo" class="lab-logo-tall">
-                </div>
-                
-                <div class="header-text-col">
-        
-                <!-- main caption -->
-                  <div class="logo">
-                    <p class="zlab_caption">Weiran Feng Lab @ Fox Chase Cancer Center</p>
-                </div>
-                
-<!-- Main menu-->
-<div class="menu_wrapper">
-  <nav id="menu" class="menu-main-menu-container">
-    <ul id="menu-main-menu" class="menu">
-      <li class="current_page_item"><a href="index.html"><span>Home</span></a></li>
-      <li><a href="content/simple/publications.html"><span>Publications</span></a></li>
-      <li><a href="content/simple/members.html"><span>Members</span></a></li>
-      <li><a href="content/simple/photos.html"><span>Photos</span></a></li>
-      <li><a href="content/simple/news.html"><span>News</span></a></li>
-      <!-- to be added later<li><a href="content/simple/collaboration.html"><span>Collaboration</span></a></li>-->
-      <li><a href="content/simple/contact.html"><span>Contact</span></a></li>
-    </ul>
-  </nav><a class="responsive-menu-toggle" href="#"><i class="icon-menu"></i></a>
-</div> <!-- END of menu_wrapper, Main menu -->
-                
+  <!-- Left: tall lab logo -->
+  <div class="header-logo-col">
+    <img src="content/simple/images/lab_logo.png"
+         alt="Feng Lab logo"
+         class="lab-logo-tall">
+  </div>
 
-<!-- Secondary menu area - only for certain pages -->
-<div class="secondary_menu_wrapper"></div>
-<!-- Banner area - only for certain pages-->
-<div class="banner_wrapper"></div>
-<!-- Header Searchform area-->
-<div class="search_wrapper">
-  <form method="get" id="searchform" action="#">
-    <input type="text" class="field"
-           name="s" id="s" placeholder="Enter your search" />
-    <input type="submit" class="submit flv_disp_none" value="" />
-  </form>
-</div> <!-- END of search_wrapper -->
-                
-              </div> <!-- END of top_bar_left -->
+  <!-- Right: caption + menu stacked -->
+  <div class="header-text-col">
+
+    <div class="logo">
+      <p class="zlab_caption">Weiran Feng Lab @ Fox Chase Cancer Center</p>
+    </div>
+
+    <div class="menu_wrapper">
+      <nav id="menu" class="menu-main-menu-container">
+        <ul id="menu-main-menu" class="menu">
+          <li class="current_page_item"><a href="index.html"><span>Home</span></a></li>
+          <li><a href="content/simple/publications.html"><span>Publications</span></a></li>
+          <li><a href="content/simple/members.html"><span>Members</span></a></li>
+          <li><a href="content/simple/photos.html"><span>Photos</span></a></li>
+          <li><a href="content/simple/news.html"><span>News</span></a></li>
+          <li><a href="content/simple/contact.html"><span>Contact</span></a></li>
+        </ul>
+      </nav>
+      <a class="responsive-menu-toggle" href="#"><i class="icon-menu"></i></a>
+    </div> <!-- END menu_wrapper -->
+
+  </div> <!-- END header-text-col -->
+
+  <!-- Keep these in the header, but OUTSIDE the caption/menu stack -->
+  <div class="secondary_menu_wrapper"></div>
+  <div class="banner_wrapper"></div>
+
+  <div class="search_wrapper">
+    <form method="get" id="searchform" action="#">
+      <input type="text" class="field" name="s" id="s" placeholder="Enter your search" />
+      <input type="submit" class="submit flv_disp_none" value="" />
+    </form>
+  </div> <!-- END search_wrapper -->
+
+</div> <!-- END top_bar_left -->
+
             </div>   <!-- END of column -->
           </div>     <!-- END of container -->
         </div>       <!-- END of Top_bar -->
