@@ -1057,10 +1057,12 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
 }
 
 /* Tagline styling: black, clean, tight */
+/* Larger, still elegant */
 .featured-card .pub-tagline {
-  font-size: 1.05em;
-  line-height: 1.5;
+  font-size: 1.2em !important;   /* increased from 1.05em */
+  line-height: 1.55 !important;
   margin: 2px 0 0 0 !important;
-  color: #000000 !important;       /* force true black */
+  color: #000000 !important;
   font-style: italic;
 }
+
