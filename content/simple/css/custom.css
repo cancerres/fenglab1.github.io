@@ -1101,7 +1101,7 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
 #Top_bar .top_bar_left{
   display: flex !important;
   align-items: stretch !important;     /* key: children match full height */
-  gap: 18px !important;
+  gap: 6px !important;             /* gap between logo and title, was 18px → now tighter */
 }
 
 /* Left column: logo fills the header stack height */
