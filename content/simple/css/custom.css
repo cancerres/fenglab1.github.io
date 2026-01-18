@@ -1272,7 +1272,7 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
 
 /* DEBUG: force the logo to move right no matter what */
 #Top_bar .top_bar_left .header-logo-col{
-  margin-left: 110px !important;      /* increase this: 30px, 40px to test */
+  margin-left: 130px !important;      /* increase this: 30px, 40px to test */
   padding-left: 0 !important;
   transform: none !important;         /* avoid conflicts */
 }
@@ -1280,5 +1280,22 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
 /* If the theme positions the image itself oddly, move the image */
 #Top_bar .top_bar_left .header-logo-col img.lab-logo-tall{
   position: relative !important;
-  left: 110px !important;              /* increase this too if needed */
+  left: 130px !important;              /* increase this too if needed */
+}
+
+/* Fix logo being hidden behind header layers */
+#Top_bar,
+#Top_bar * {
+  overflow: visible !important;
+}
+
+/* Force logo above all header layers */
+#Top_bar .header-logo-col {
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+#Top_bar img.lab-logo-tall {
+  position: relative !important;
+  z-index: 9999 !important;
 }
