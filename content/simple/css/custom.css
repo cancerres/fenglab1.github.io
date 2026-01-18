@@ -1094,74 +1094,58 @@ body.contact-page .get_in_touch li.phone span.icon i.icon-phone{
 }
 
 /* =========================================================
-   HEADER — FINAL CLEAN LAYOUT (your exact HTML structure)
-   .top_bar_left { .header-logo-col + .header-text-col }
+   HEADER — FINAL CLEAN CONTROL
+   Only adjusts spacing between logo and title/menu
+   Does NOT affect header position, font size, or layout
 ========================================================= */
 
-/* Layout: logo + (title + menu) stay together */
 #Top_bar .top_bar_left{
-  float: none !important;
-  width: auto !important;
-
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-start !important;
-
-  gap: 10px !important;              /* space between logo and text/menu */
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-
-  /* THIS is the only knob you change to move everything right */
-  padding-left: 36px !important;     /* try 24px → 36px → 48px → 60px */
+  gap: 2px !important;          /* ← ADJUST ONLY THIS (4–16px typical) */
 }
 
-/* Logo column */
+/* Logo wrapper: no mystery margins */
 #Top_bar .header-logo-col{
+  margin: 0 !important;
+  padding: 0 !important;
   flex: 0 0 auto !important;
   display: flex !important;
   align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
-/* Logo image */
+/* Logo image: stable size, no weird stretching */
 #Top_bar img.lab-logo-tall{
-  display: block !important;
-  width: auto !important;
   height: 100% !important;
-  max-height: 120px !important;      /* safety cap */
+  max-height: 120px !important;   /* safety cap */
+  width: auto !important;
+  display: block !important;
   object-fit: contain !important;
   filter: none !important;
 }
 
-/* Text/menu column */
+/* Text/menu column: no extra spacing injected */
 #Top_bar .header-text-col{
-  flex: 1 1 auto !important;
-  min-width: 0 !important;
-
+  margin: 0 !important;
+  padding: 0 !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
-  gap: 6px !important;
+  gap: 6px !important;   /* space between title and menu */
 }
 
-/* Title spacing (header only) */
-#Top_bar .zlab_caption{
+/* Remove margins that inflate height */
+#Top_bar .header-text-col .logo,
+#Top_bar .header-text-col .menu_wrapper,
+#Top_bar .header-text-col .zlab_caption{
   margin: 0 !important;
-  padding-top: 6px !important;
+  padding: 0 !important;
 }
 
-/* Kill theme indentation on menu */
+/* Ensure menu doesn't bring its own indent */
 #Top_bar #menu,
 #Top_bar #menu > ul,
 #Top_bar #menu-main-menu{
-  margin: 0 !important;
+  margin-left: 0 !important;
   padding-left: 0 !important;
-}
-
-/* Restore normal menu font size */
-#Top_bar #menu > ul > li > a,
-#Top_bar #menu > ul > li > a span{
-  font-size: 16px !important;
-  line-height: 1.2 !important;
 }
